@@ -49,27 +49,27 @@
   ];
 
   return (
-    <section id="experience" className="px-6 lg:px-20 py-20" data-aos="fade-up">
-      <h1 className={`text-4xl lg:text-5xl font-bold mb-8 ${darkMode ? "text-slate-100" : "text-slate-950"}`}>Pengalaman</h1>
+    <section id="experience" className="px-4 sm:px-6 md:px-8 lg:px-20 py-12 sm:py-16 md:py-20" data-aos="fade-up">
+      <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 ${darkMode ? "text-slate-100" : "text-slate-950"}`}>Pengalaman</h1>
 
-      <div className={`rounded-[2rem] shadow-xl p-6 lg:p-8 ${darkMode ? "bg-slate-950 shadow-slate-900/40" : "bg-white"}`}>
-        <div className="space-y-10">
+      <div className={`rounded-2xl sm:rounded-3xl lg:rounded-[2rem] shadow-xl p-4 sm:p-6 md:p-8 lg:p-8 ${darkMode ? "bg-slate-950 shadow-slate-900/40" : "bg-white"}`}>
+        <div className="space-y-8 sm:space-y-10">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] items-start">
-              <div className="flex items-start gap-4">
+            <div key={idx} className="grid gap-4 sm:gap-6 lg:grid-cols-[200px_minmax(0,1fr)] items-start">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex flex-col items-center">
-                  <div className="h-3 w-3 rounded-full bg-orange-500 mt-2" />
+                  <div className="h-3 w-3 rounded-full bg-orange-500 mt-1" />
                   <div className="h-full w-px bg-orange-100 ml-1" />
                 </div>
                 <div>
-                  <div className="text-orange-500 font-semibold">{exp.year}</div>
-                  <div className={`mt-2 text-lg font-bold ${darkMode ? "text-slate-100" : "text-slate-950"}`}>{exp.title}</div>
-                  <div className={`mt-1 ${darkMode ? "text-slate-400" : "text-gray-500"}`}>{exp.company}</div>
+                  <div className="text-orange-500 font-semibold text-xs sm:text-sm">{exp.year}</div>
+                  <div className={`mt-1 sm:mt-2 text-base sm:text-lg font-bold ${darkMode ? "text-slate-100" : "text-slate-950"}`}>{exp.title}</div>
+                  <div className={`mt-1 text-xs sm:text-sm ${darkMode ? "text-slate-400" : "text-gray-500"}`}>{exp.company}</div>
                 </div>
               </div>
 
               <div>
-                <ul className={`list-disc pl-5 space-y-3 text-justify leading-7 ${darkMode ? "text-slate-300" : "text-gray-600"}`}>
+                <ul className={`list-disc pl-4 sm:pl-5 space-y-2 sm:space-y-3 text-justify leading-6 sm:leading-7 text-xs sm:text-sm ${darkMode ? "text-slate-300" : "text-gray-600"}`}>
                   {exp.points.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))}

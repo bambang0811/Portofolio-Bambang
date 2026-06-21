@@ -34,16 +34,16 @@ export default function Projects({ darkMode }) {
   return (
     <section
       id="projects"
-      className={`px-8 lg:px-20 py-20 ${darkMode ? "bg-slate-950" : "bg-[#F8FAFC]"}`}
+      className={`px-4 sm:px-6 md:px-8 lg:px-20 py-12 sm:py-16 md:py-20 ${darkMode ? "bg-slate-950" : "bg-[#F8FAFC]"}`}
       data-aos="fade-up"
     >
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-        <div className="flex items-center gap-4">
-          <div className={`inline-flex h-12 w-12 items-center justify-center rounded-3xl ${darkMode ? "bg-slate-900" : "bg-white shadow"}`}>
-            <FaProjectDiagram className={`text-xl ${darkMode ? "text-orange-400" : "text-orange-500"}`} />
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className={`inline-flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-3xl ${darkMode ? "bg-slate-900" : "bg-white shadow"}`}>
+            <FaProjectDiagram className={`text-lg sm:text-xl ${darkMode ? "text-orange-400" : "text-orange-500"}`} />
           </div>
           <div>
-            <h1 className={`text-5xl font-bold ${darkMode ? "text-slate-100" : "text-slate-950"}`}>
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold ${darkMode ? "text-slate-100" : "text-slate-950"}`}>
               Proyek
             </h1>
           </div>
@@ -51,57 +51,57 @@ export default function Projects({ darkMode }) {
 
         <a
           href="#projects"
-          className="inline-flex items-center gap-2 text-orange-500 font-medium hover:text-orange-600"
+          className="inline-flex items-center gap-2 text-orange-500 font-medium text-sm sm:text-base hover:text-orange-600"
         >
           Lihat Semua Proyek →
         </a>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl duration-300 border transition-all ${darkMode ? "bg-slate-950 border-slate-800 shadow-slate-900/40 hover:shadow-slate-900/60" : "bg-white border-slate-200 shadow-slate-200/60 hover:shadow-slate-300"}`}
+            className={`rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl duration-300 border transition-all ${darkMode ? "bg-slate-950 border-slate-800 shadow-slate-900/40 hover:shadow-slate-900/60" : "bg-white border-slate-200 shadow-slate-200/60 hover:shadow-slate-300"}`}
           >
-            {/* Image Section - Large & Clear */}
-            <div className={`h-40 md:h-36 lg:h-40 overflow-hidden flex items-center justify-center ${darkMode ? "bg-slate-800" : "bg-slate-100"}`}> 
+            {/* Image Section */}
+            <div className={`h-32 sm:h-40 md:h-36 lg:h-40 overflow-hidden flex items-center justify-center ${darkMode ? "bg-slate-800" : "bg-slate-100"}`}> 
               {project.img ? (
                 <img src={project.img} alt={project.title} className="max-w-full max-h-full object-contain object-center transition-transform duration-500 hover:scale-105" />
               ) : (
-                <div className="h-full w-full flex items-center justify-center text-6xl">💻</div>
+                <div className="h-full w-full flex items-center justify-center text-5xl sm:text-6xl">💻</div>
               )}
             </div>
 
             {/* Content Section */}
-            <div className="p-6 md:p-5 lg:p-6 flex flex-col">
+            <div className="p-4 sm:p-5 md:p-6 flex flex-col">
               {/* Title */}
-              <h2 className={`text-lg md:text-base lg:text-lg font-bold mb-3 leading-snug ${darkMode ? "text-slate-100" : "text-slate-950"}`}>
+              <h2 className={`text-sm sm:text-base lg:text-lg font-bold mb-2 sm:mb-3 leading-snug line-clamp-2 ${darkMode ? "text-slate-100" : "text-slate-950"}`}>
                 {project.title}
               </h2>
 
               {/* Date */}
-              <p className="text-orange-500 font-semibold text-sm md:text-xs lg:text-sm mb-3">
+              <p className="text-orange-500 font-semibold text-xs sm:text-sm mb-2 sm:mb-3">
                 {project.date}
               </p>
 
-              {/* Description - Compact */}
-              <p className={`text-sm leading-5 mb-4 line-clamp-3 ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
+              {/* Description */}
+              <p className={`text-xs sm:text-sm leading-5 mb-3 sm:mb-4 line-clamp-3 ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
                 {project.desc}
               </p>
 
               {/* Tag */}
-              <div className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold w-fit ${darkMode ? "bg-slate-800 text-slate-200" : "bg-slate-100 text-slate-700"}`}>
-                <FaGithub className="text-orange-500 text-sm" />
+              <div className={`inline-flex items-center gap-2 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs font-semibold w-fit mb-3 ${darkMode ? "bg-slate-800 text-slate-200" : "bg-slate-100 text-slate-700"}`}>
+                <FaGithub className="text-orange-500 text-xs sm:text-sm" />
                 {project.tag}
               </div>
 
-              {/* Link Button - Optional */}
+              {/* Link Button */}
               {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-orange-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                  className="mt-auto flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-3 sm:px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-orange-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Kunjungi
                   <FaExternalLinkAlt className="text-xs" />
